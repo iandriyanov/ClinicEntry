@@ -8,7 +8,7 @@
 #
 # Creation Date : 16-09-2015
 #
-# Last Modified : Ср. 16 сент. 2015 12:17:22
+# Last Modified : Ср. 16 сент. 2015 12:21:59
 #
 # Created By : iandriyanov
 #
@@ -29,7 +29,7 @@ $(which virtualenv) --no-site-packages --python=$(which python3) $PROJ_DIR
 $PROJ_DIR/bin/pip install --upgrade pip setuptools distribute
 $PROJ_DIR/bin/pip install django==1.8.4 psycopg2
 sudo -u postgres psql -c "CREATE ROLE dbuser;"
-sudo -u postgres psql -c "ALTER ROLE dbuser WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION PASSWORD 'md5cae434b06e393216fcd7a7648c98d09b';"
+sudo -u postgres psql -c "ALTER ROLE dbuser WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB LOGIN NOREPLICATION PASSWORD '1q2w3e4r';"
 sudo -u postgres $(which createdb) clinic -O dbuser
 
 if [ ! -d $PROJ_DIR/project ]; then $(which mkdir) -p $PROJ_DIR/project; fi
