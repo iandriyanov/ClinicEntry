@@ -8,7 +8,7 @@
 #
 # Creation Date : 16-09-2015
 #
-# Last Modified : Ср. 16 сент. 2015 12:23:47
+# Last Modified : Ср. 16 сент. 2015 12:37:21
 #
 # Created By : iandriyanov
 #
@@ -39,4 +39,4 @@ cd $PROJ_DIR/project/
 . $PROJ_DIR/bin/activate
 $PROJ_DIR/bin/python manage.py migrate
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('myadmin', '', '1q2w3e4r')" | $PROJ_DIR/bin/python manage.py shell
-$PROJ_DIR/bin/python manage.py runserver &
+$PROJ_DIR/bin/python manage.py runserver 0.0.0.0:80 > /tmp/django.log 2>&1 &
