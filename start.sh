@@ -8,7 +8,7 @@
 #
 # Creation Date : 16-09-2015
 #
-# Last Modified : Ср. 16 сент. 2015 12:14:09
+# Last Modified : Ср. 16 сент. 2015 12:17:22
 #
 # Created By : iandriyanov
 #
@@ -36,6 +36,6 @@ if [ ! -d $PROJ_DIR/project ]; then $(which mkdir) -p $PROJ_DIR/project; fi
 git clone https://github.com/iandriyanov/ClinicEntry.git $PROJ_DIR/project/
 
 cd $PROJ_DIR/project/
-source $PROJ_DIR/bin/activate
+. $PROJ_DIR/bin/activate
 $PROJ_DIR/bin/python manage.py migrate
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('myadmin', '', '1q2w3e4r')" | $PROJ_DIR/bin/python manage.py shell
