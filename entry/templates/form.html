@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Запись к врачу</title>
+<link rel="stylesheet" type="text/css" href="static/view.css" media="all">
+<script type="text/javascript" src="static/calendar.js"></script>
+</head>
+<body id="main_body" >
+
+<img id="top" src="static/images/top.png" alt="">
+<div id="form_container">
+
+<h1><a>Запись к врачу</a></h1>
+<form id="reg_form" class="appnitro"  method="post" action=""> {% csrf_token %}
+<div class="form_description">
+<h2>Запись к врачу</h2>
+<p></p>
+</div>
+<ul >
+
+<li id="li_1" >
+<label class="description" for="element_1">ФИО </label>
+<span>
+<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value=""/>
+<label>First</label>
+</span>
+<span>
+<input id="element_1_2" name= "element_1_2" class="element text" maxlength="255" size="14" value=""/>
+<label>Last</label>
+</span> 
+</li>		<li id="li_3" >
+<label class="description" for="element_3">Врач </label>
+<div>
+<select class="element select medium" id="element_3" name="element_3"> 
+<option value="hir" >Hirurg</option>
+<option value="oftal" >Oftalmolog</option>
+<option value="glav" >GlavVrach</option>
+<option value="vet" >Veterinar</option>
+
+</select>
+</div> 
+</li>		<li id="li_2" >
+<label class="description" for="element_2">Дата </label>
+<span>
+<input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+<label for="element_2_1">DD</label>
+</span>
+<span>
+<input id="element_2_2" name="element_2_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+<label for="element_2_2">MM</label>
+</span>
+<span>
+<input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text">
+<label for="element_2_3">YYYY</label>
+</span>
+
+<span id="calendar_2">
+<img id="cal_img_2" class="datepicker" src="static/images/calendar.gif" alt="Pick a date.">	
+</span>
+<script type="text/javascript">
+Calendar.setup({
+inputField : "element_2_3",
+baseField    : "element_2",
+displayArea  : "calendar_2",
+button : "cal_img_2",
+ifFormat : "%B %e, %Y",
+onSelect : selectEuropeDate
+});
+</script>
+ 
+</li><li id="li_4" >
+<label class="description" for="element_4">Время </label>
+<span>
+<table>
+<tr>
+<td>
+<input id="element_4_1" name="element_4" class="element radio" type="radio" value="9" />
+<label class="choice" for="element_4_1">9:00</label>
+</td>
+<td>
+<input id="element_4_2" name="element_4" class="element radio" type="radio" value="10" />
+<label class="choice" for="element_4_2">10:00</label>
+</td>
+<td>
+<input id="element_4_3" name="element_4" class="element radio" type="radio" value="11" />
+<label class="choice" for="element_4_3">11:00</label>
+</td>
+<td>
+<input id="element_4_4" name="element_4" class="element radio" type="radio" value="12" />
+<label class="choice" for="element_4_4">12:00</label>
+</td>
+<td>
+<input id="element_4_5" name="element_4" class="element radio" type="radio" value="13" />
+<label class="choice" for="element_4_5">13:00</label>
+</td>
+</tr>
+<tr>
+<td>
+<input id="element_4_6" name="element_4" class="element radio" type="radio" value="14" />
+<label class="choice" for="element_4_6">14:00</label>
+</td>
+<td>
+<input id="element_4_7" name="element_4" class="element radio" type="radio" value="15" />
+<label class="choice" for="element_4_7">15:00</label>
+</td>
+<td>
+<input id="element_4_8" name="element_4" class="element radio" type="radio" value="16" />
+<label class="choice" for="element_4_8">16:00</label>
+</td>
+<td>
+<input id="element_4_9" name="element_4" class="element radio" type="radio" value="17" />
+<label class="choice" for="element_4_9">17:00</label>
+</td>
+<td>
+<input id="element_4_10" name="element_4" class="element radio" type="radio" value="18" />
+<label class="choice" for="element_4_10">18:00</label>
+</td>
+</tr>
+</table>
+</span> 
+</li>
+
+<li class="buttons">
+   <input type="hidden" name="form_id" value="reg_form_submit" />
+    
+<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+</li>
+</ul>
+</form>	
+<div id="footer">
+Запись к врачу
+</div>
+</div>
+<img id="bottom" src="static/images/bottom.png" alt="">
+</body>
+</html>
